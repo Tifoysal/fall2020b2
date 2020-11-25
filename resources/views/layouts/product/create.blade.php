@@ -22,10 +22,24 @@
                    id="product_name" aria-describedby="emailHelp">
 
         </div>
+
+        <div class="form-group">
+            <select class="form-control" name="category_id" id="">
+                @foreach ($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="form-group">
             <label for="price">Product Price</label>
             <input name="product_price" required placeholder="Enter Product Price" type="number" class="form-control"
                    id="price">
+        </div>
+
+        <div class="form-group">
+            <label for="price">Product Description</label>
+            <textarea name="description" id="" class="form-control"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

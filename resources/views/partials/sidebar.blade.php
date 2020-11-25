@@ -9,6 +9,19 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="{{route('category.form')}}">
+                    <span data-feather="shopping-cart"></span>
+                    Create Category
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('category.list')}}">
+                    <span data-feather="shopping-cart"></span>
+                    Category List
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('product.form')}}">
                     <span data-feather="shopping-cart"></span>
                     Create Product

@@ -46,7 +46,7 @@ class ProductController extends Controller
 
         //find()
         //first()
-        $products=Product::paginate(10);
+        $products=Product::with('category')->paginate(10);
 
         return view('layouts.product.list',compact('products'));
     }

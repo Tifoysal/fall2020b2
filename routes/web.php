@@ -31,3 +31,4 @@ Route::put('/product/update/{id}',[ProductController::class,'update'])->name('pr
 Route::get('/category/createForm',[CategoryController::class,'showForm'])->name('category.form');
 Route::post('/category/store',[CategoryController::class,'storeCategory'])->name('category.store');
 Route::get('/category/list',[CategoryController::class,'showList'])->name('category.list');
+Route::get('/category/allproducts/{id}',[CategoryController::class,'getAllProducts'])->name('category.all.products');

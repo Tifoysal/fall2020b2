@@ -45,4 +45,14 @@ class CategoryController extends Controller
 
         return view('layouts.category.list',compact('categories'));
     }
+
+    public function getAllProducts($id)
+    {
+        $category=Category::find($id);
+
+        $products=Product::where('category_id','=',$id)->get();
+        //select * from products where category_id=$id;
+
+        return view('layouts.category.product_list',compact('products','category'));
+    }
 }

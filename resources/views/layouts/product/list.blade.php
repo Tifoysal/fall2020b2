@@ -23,7 +23,7 @@
                 <th scope="row">{{$key+1}}</th>
                 <td>{{$product->name}}</td>
                 <td>{{$product->price}}</td>
-                <td>{{$product->category_id}}</td>
+                <td>{{$product->category->name}}</td>
                 <td>{{$product->status}}</td>
 
                 <td>

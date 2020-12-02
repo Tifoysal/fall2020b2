@@ -25,7 +25,8 @@
                 <td>
                     <a class="btn btn-primary" href="">Edit</a>
                     <a class="btn btn-danger" href="">Delete</a>
-                    <a class="btn btn-warning" href="">View</a>
+{{--                    <a class="btn btn-warning" href="">View</a>--}}
+                    <a class="btn btn-success" href="{{route('category.all.products',$category->id)}}">View all products</a>
 
                 </td>
             </tr>

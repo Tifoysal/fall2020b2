@@ -11,6 +11,7 @@ class CategoryController extends Controller
 {
     public function showForm()
     {
+//        dd("hello");
         return view('layouts.category.create');
     }
 

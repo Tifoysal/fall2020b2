@@ -4,6 +4,7 @@
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\CategoryController;
 use App\Http\Controllers\Backend\CategoryController as BackendCategory;
+use App\Http\Controllers\Frontend\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\ProductController;
 /*
@@ -45,7 +46,13 @@ Route::group(['namespace'=>'Backend'],function(){
 
 });
 
+
 Route::group(['namespace'=>'Frontend'],function(){
     Route::get('/',[HomeController::class,'home'])->name('frontend');
+
+    Route::post('/registration',[UserController::class,'registration'])->name('user.registration');
+    Route::post('/login',[UserController::class,'login'])->name('user.login');
+    Route::get('logout',[UserController::class,'logout'])->name('user.logout');
     Route::get('/category-products/{id}',[CategoryController::class,'getProducts'])->name('category.products');
 });
+

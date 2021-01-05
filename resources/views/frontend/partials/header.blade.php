@@ -27,6 +27,7 @@
             </button>
             @endguest
             @auth
+                <img style="width: 40px;border-radius: 20px;" src="{{url('/uploads/user/'.auth()->user()->photo)}}" alt="user"/>
                 <a class="btn btn-success" href="{{route('user.logout')}}">Logout</a>
             @endauth
         </div>
@@ -74,7 +75,7 @@
                     </div>
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
-                        <form action="{{route('user.registration')}}" method="post">
+                        <form action="{{route('user.registration')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">User Name *</label>
@@ -92,6 +93,11 @@
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Mobile Numbers *</label>
                                 <input  name="mobile" required type="number" class="form-control" id="exampleInputPassword1" placeholder="Mobile number">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">User image</label>
+                                <input  name="photo" type="file" class="form-control" id="" placeholder="user photo">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Register</button>

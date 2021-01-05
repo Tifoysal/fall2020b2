@@ -11,6 +11,7 @@ class UserController extends Controller
 {
     public function registration(Request  $request)
     {
+
        $request->validate([
           'name'=>'required',
           'email'=>'required|email',
@@ -18,11 +19,21 @@ class UserController extends Controller
           'password'=>'required',
        ]);
 
+       $file_name='';
+        if ($request->hasFile('photo')) {
+
+            $avatar = $request->file('photo');
+                $file_name = date('Ymdhms').'.' . $avatar->getClientOriginalExtension();
+                $avatar->storeAs('user', $file_name);
+
+        }
+
        User::create([
           'name'=>$request->name,
           'mobile'=>$request->mobile,
           'email'=>$request->email,
-          'password'=>bcrypt($request->password)
+          'password'=>bcrypt($request->password),
+           'photo'=>$file_name
        ]);
 
        return redirect()->back()->with('message','User Registration Successful.');
